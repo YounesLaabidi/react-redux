@@ -2,14 +2,14 @@ import { RootState, AppDispatch } from "./types/types";
 import { useSelector, useDispatch } from "react-redux";
 import { addTodo } from "./store/todos/TodosSlicer";
 import { TTodo } from "./types/types";
-import Todo from "./components/Todo";
+import Todo from "./components/todo";
+import Counter from './components/counter/counter';
 import { useState } from "react";
 function App() {
-  const todos = useSelector((state: RootState) => state.todos);
-  console.log(todos)
+  // const todos = useSelector((state: RootState) => state.todos);
 	const dispatch = useDispatch<AppDispatch>()
 	const [input, setInput] = useState('');
-	const handleSubmit = (e : React.FormEvent<HTMLFormElement>) => {
+	/* const handleSubmit = (e : React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const todo : TTodo = {
       completed : false,
@@ -32,6 +32,15 @@ function App() {
       </div>
     </>
   );
+	*/
+	return (
+		<div>
+			<Counter />
+		</div>
+	)
+
+
+
 }
 
 export default App;
